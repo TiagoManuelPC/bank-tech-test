@@ -26,5 +26,5 @@ I would like to be able to view a bank statement
 
 ```
 
-##Live Demo
+## Live Demo
 ![Home](./public/Bank.gif)
