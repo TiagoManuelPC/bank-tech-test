@@ -25,4 +25,6 @@ So I can manage my finances
 I would like to be able to view a bank statement
 
 ```
+
+##Live Demo
 ![Home](./public/Bank.gif)
