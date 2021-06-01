@@ -1,11 +1,10 @@
 class BankAccount
+  attr_reader :balance
+  attr_reader :transactions
   MINIMUNBALLANCE = 0
   def initialize
     @balance = 0
-  end
-
-  def balance
-    @balance
+    @transactions = []
   end
 
   def deposit(amount)
@@ -16,6 +15,7 @@ class BankAccount
     raise "Can't complete transaction: Insufficient Funds" if overdraft?(amount)
     @balance -= amount
   end
+
 
   private
 

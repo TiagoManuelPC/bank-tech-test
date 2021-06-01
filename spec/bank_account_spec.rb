@@ -30,4 +30,11 @@ describe BankAccount do
       expect{tiago.withdraw(1000)}.to raise_error("Can't complete transaction: Insufficient Funds")
     end
   end
+
+  context 'stores transactions data' do
+    it 'starts with no transactions' do
+      expect(tiago.transactions).to be_empty
+    end
+    
+  end
 end
