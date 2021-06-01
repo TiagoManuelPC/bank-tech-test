@@ -3,8 +3,9 @@ require 'date'
 require 'bank_account'
 
 describe Transaction do
-    subject(:transaction) {described_class.new( 100, 'Credit' ,tiago.balance)}
     let(:tiago) {BankAccount.new}
+    subject(:transaction) {described_class.new( 100, 'Credit' ,tiago.balance)}
+    
     
     it 'has a date' do
       expect(transaction.date).to eq(Date.today)
@@ -12,7 +13,7 @@ describe Transaction do
 
     it 'has a balance' do
       tiago.deposit(100)
-      expect(transaction.balance).to eq(100)
+      expect(tiago.balance).to eq(100)
     end
 
     it 'has a type' do

@@ -1,4 +1,6 @@
 require_relative 'transaction'
+require_relative 'statement'
+
 class BankAccount
   attr_reader :balance, :transactions
    
@@ -19,14 +21,14 @@ class BankAccount
     create_transaction(amount, "Debit")
   end
 
-
-  
-
-  def create_transaction( amount, type , transaction = Transaction)
-    @transactions << transaction.create(amount,type, @balance)
+  def print_statement(statement = Statement)
+    statement.print(@transactions)
   end
 
   private
+  def create_transaction( amount, type , transaction = Transaction)
+    @transactions << transaction.create(amount,type, @balance)
+  end
 
   def overdraft?(amount)
     @balance - amount < MINIMUNBALLANCE
