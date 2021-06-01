@@ -1,1 +1,1 @@
-![Home](./public/images/Bank.gif)
+![Home](./public/Bank.gif)
