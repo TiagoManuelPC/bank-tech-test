@@ -14,7 +14,7 @@ describe Statement do
     end
 
     it 'prints a list of transactions when Debit deducted' do
-        expect { Statement.print(transactions_array2) }.to output("date || credit || debit || balance\n#{Date.today.strftime("%m/%d/%Y")} ||     || 10 || 20\n").to_stdout
+        expect { Statement.print(transactions_array2) }.to output("date || credit || debit || balance\n#{Date.today.strftime("%m/%d/%Y")} || || 10 || 20\n").to_stdout
       end
   end
 end

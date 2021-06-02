@@ -8,7 +8,7 @@ class Statement
       if credit?(transaction)
         puts "#{transaction.date.strftime("%m/%d/%Y")} || #{transaction.amount} || || #{transaction.balance}"
       else
-        puts "#{transaction.date.strftime("%m/%d/%Y")} ||     || #{transaction.amount} || #{transaction.balance}"
+        puts "#{transaction.date.strftime("%m/%d/%Y")} || || #{transaction.amount} || #{transaction.balance}"
       end
     end
   end
