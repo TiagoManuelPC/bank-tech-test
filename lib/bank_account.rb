@@ -6,7 +6,7 @@ require_relative 'statement'
 class BankAccount
   attr_reader :balance, :transactions
 
-  MINIMUNBALLANCE = 0
+  MINIMUN_BALLANCE = 0
   def initialize
     @balance = 0
     @transactions = []
@@ -35,6 +35,6 @@ class BankAccount
   end
 
   def overdraft?(amount)
-    @balance - amount < MINIMUNBALLANCE
+    @balance - amount < MINIMUN_BALLANCE
   end
 end
