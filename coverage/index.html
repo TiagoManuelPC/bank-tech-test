@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2021-06-02T16:53:11+01:00">2021-06-02T16:53:11+01:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2021-06-02T16:58:48+01:00">2021-06-02T16:58:48+01:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -274,7 +274,7 @@
 
             
 
-            <code class="ruby">  MINIMUNBALLANCE = 0</code>
+            <code class="ruby">  MINIMUN_BALLANCE = 0</code>
           </li>
         </div>
       
@@ -593,7 +593,7 @@
 
             
 
-            <code class="ruby">    @balance - amount &lt; MINIMUNBALLANCE</code>
+            <code class="ruby">    @balance - amount &lt; MINIMUN_BALLANCE</code>
           </li>
         </div>
       
@@ -833,7 +833,7 @@
 
             
 
-            <code class="ruby">    true if transaction.type == &#39;Credit&#39;</code>
+            <code class="ruby">   transaction.type == &#39;Credit&#39;</code>
           </li>
         </div>
       
@@ -1203,7 +1203,7 @@
 
             
 
-            <code class="ruby">  subject(:tiago) { described_class.new }</code>
+            <code class="ruby">  subject(:new_account) { described_class.new }</code>
           </li>
         </div>
       
@@ -1247,7 +1247,7 @@
 
             
 
-            <code class="ruby">    expect(tiago).to be_an_instance_of(BankAccount)</code>
+            <code class="ruby">    expect(new_account).to be_an_instance_of(BankAccount)</code>
           </li>
         </div>
       
@@ -1291,7 +1291,7 @@
 
             
 
-            <code class="ruby">    expect(tiago.balance).to be_equal(0)</code>
+            <code class="ruby">    expect(new_account.balance).to be_equal(0)</code>
           </li>
         </div>
       
@@ -1346,7 +1346,7 @@
 
             
 
-            <code class="ruby">      tiago.deposit(500)</code>
+            <code class="ruby">      new_account.deposit(500)</code>
           </li>
         </div>
       
@@ -1390,7 +1390,7 @@
 
             
 
-            <code class="ruby">      tiago.deposit(500)</code>
+            <code class="ruby">      new_account.deposit(500)</code>
           </li>
         </div>
       
@@ -1401,7 +1401,7 @@
 
             
 
-            <code class="ruby">      expect(tiago.balance).to be_equal(1000)</code>
+            <code class="ruby">      expect(new_account.balance).to be_equal(1000)</code>
           </li>
         </div>
       
@@ -1445,7 +1445,7 @@
 
             
 
-            <code class="ruby">      tiago.withdraw(500)</code>
+            <code class="ruby">      new_account.withdraw(500)</code>
           </li>
         </div>
       
@@ -1456,7 +1456,7 @@
 
             
 
-            <code class="ruby">      expect(tiago.balance).to be_equal(0)</code>
+            <code class="ruby">      expect(new_account.balance).to be_equal(0)</code>
           </li>
         </div>
       
@@ -1500,7 +1500,7 @@
 
             
 
-            <code class="ruby">      expect { tiago.withdraw(1000) }.to raise_error(&quot;Can&#39;t complete transaction: Insufficient Funds&quot;)</code>
+            <code class="ruby">      expect { new_account.withdraw(1000) }.to raise_error(&quot;Can&#39;t complete transaction: Insufficient Funds&quot;)</code>
           </li>
         </div>
       
@@ -1566,7 +1566,7 @@
 
             
 
-            <code class="ruby">      expect(tiago.transactions).to be_empty</code>
+            <code class="ruby">      expect(new_account.transactions).to be_empty</code>
           </li>
         </div>
       
@@ -1643,7 +1643,7 @@
 
             
 
-            <code class="ruby">      tiago.print_statement(statement)</code>
+            <code class="ruby">      new_account.print_statement(statement)</code>
           </li>
         </div>
       
