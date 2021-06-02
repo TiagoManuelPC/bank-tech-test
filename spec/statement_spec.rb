@@ -10,11 +10,11 @@ describe StatementPrinter do
   let(:transactions_array2) { [transaction2] }
   describe '#print' do
     it 'prints a list of transactions when Credit added' do
-      expect { StatementPrinter.print(transactions_array1) }.to output("date || credit || debit || balance\n#{Date.today.strftime("%m/%d/%Y")} || 10 || || 20\n").to_stdout
+      expect { StatementPrinter.print(transactions_array1) }.to output("date || credit || debit || balance\n#{Date.today.strftime("%m/%d/%Y")} || 10.00 || || 20.00\n").to_stdout
     end
 
     it 'prints a list of transactions when Debit deducted' do
-        expect { StatementPrinter.print(transactions_array2) }.to output("date || credit || debit || balance\n#{Date.today.strftime("%m/%d/%Y")} || || 10 || 20\n").to_stdout
+        expect { StatementPrinter.print(transactions_array2) }.to output("date || credit || debit || balance\n#{Date.today.strftime("%m/%d/%Y")} || || 10.00 || 20.00\n").to_stdout
       end
   end
 end
