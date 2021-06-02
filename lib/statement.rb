@@ -14,6 +14,6 @@ class StatementPrinter
   end
 
   def self.credit?(transaction)
-    true if transaction.type == 'Credit'
+   transaction.type == 'Credit'
   end
 end
