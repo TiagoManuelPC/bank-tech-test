@@ -6,9 +6,9 @@ class Statement
     puts 'date || credit || debit || balance'
     transactions.each do |transaction|
       if credit?(transaction)
-        puts "#{transaction.date} || #{transaction.amount} || || #{transaction.balance}"
+        puts "#{transaction.date.strftime("%m/%d/%Y")} || #{transaction.amount} || || #{transaction.balance}"
       else
-        puts "#{transaction.date} ||     || #{transaction.amount} || #{transaction.balance}"
+        puts "#{transaction.date.strftime("%m/%d/%Y")} ||     || #{transaction.amount} || #{transaction.balance}"
       end
     end
   end
