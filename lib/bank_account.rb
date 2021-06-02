@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 require_relative 'transaction'
 require_relative 'statement'
-
+# Responsable for Managing the account
 class BankAccount
   attr_reader :balance, :transactions
-   
+
   MINIMUNBALLANCE = 0
   def initialize
     @balance = 0
@@ -12,13 +14,14 @@ class BankAccount
 
   def deposit(amount)
     @balance += amount
-    create_transaction(amount,"Credit")
+    create_transaction(amount, 'Credit')
   end
 
   def withdraw(amount)
     raise "Can't complete transaction: Insufficient Funds" if overdraft?(amount)
+
     @balance -= amount
-    create_transaction(amount, "Debit")
+    create_transaction(amount, 'Debit')
   end
 
   def print_statement(statement = Statement)
@@ -26,8 +29,9 @@ class BankAccount
   end
 
   private
-  def create_transaction( amount, type , transaction = Transaction)
-    @transactions << transaction.create(amount,type, @balance)
+
+  def create_transaction(amount, type, transaction = Transaction)
+    @transactions << transaction.create(amount, type, @balance)
   end
 
   def overdraft?(amount)
