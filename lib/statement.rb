@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 # Set up for printing transactions
-class Statement
+class StatementPrinter
   def self.print(transactions)
     puts 'date || credit || debit || balance'
     transactions.each do |transaction|
