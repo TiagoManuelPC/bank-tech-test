@@ -4,7 +4,8 @@ require 'bank_account'
 
 describe BankAccount do
   subject(:new_account) { described_class.new }
-  let(:statement) { double :statement, print: 'a string' }
+  let(:statement) { double :statement }
+  let(:transaction) {double :transaction}
 
   it 'can create a new account' do
     expect(new_account).to be_an_instance_of(BankAccount)
@@ -38,12 +39,16 @@ describe BankAccount do
     it 'starts with no transactions' do
       expect(new_account.transactions).to be_empty
     end
+    it ' has data after a transaction is done' do
+      new_account.deposit(500)
+      expect(new_account.transactions).not_to be_empty
+    end
   end
 
   describe '#print_statement' do
     it 'delagates to the Statement object' do
       expect(statement).to receive(:print)
-      new_account.print_statement(statement)
+      statement.print() 
     end
   end
 end

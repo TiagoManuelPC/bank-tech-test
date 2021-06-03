@@ -7,9 +7,10 @@ class BankAccount
   attr_reader :balance, :transactions
 
   MINIMUN_BALLANCE = 0
-  def initialize
+  def initialize(statement = StatementPrinter)
     @balance = 0
     @transactions = []
+    @statement = statement
   end
 
   def deposit(amount)
@@ -24,8 +25,8 @@ class BankAccount
     create_transaction(amount, 'Debit')
   end
 
-  def print_statement(statement = Statement)
-    statement.print(@transactions)
+  def print_statement
+    @statement.print(@transactions)
   end
 
   private
